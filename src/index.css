@@ -1,0 +1,38 @@
+@import "tailwindcss";
+@import 'flowbite';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+/* Ukrywa scrollbar w Chrome, Safari, Edge */
+::-webkit-scrollbar {
+  display: none;
+}
+@keyframes slide-in {
+  0% {
+      transform: translateX(-100%);
+      opacity: 0;
+      filter: blur(10px); /* Dodaj blur na początku */
+  }
+  100% {
+      transform: translateX(0);
+      opacity: 1;
+      filter: blur(0); /* Usuń blur na końcu */
+  }
+}
+
+.slide-in {
+  animation: slide-in 0.4s ease forwards;
+}
+
+#streamsoft_prestiz {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 255px;
+  font-weight: 700;
+  color: #3B5CD2;
+  line-height: 20px;
+}
+#erp {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 64px;
+  font-weight: 700;
+  color: #3B5CD2;
+  line-height: 20px;
+}
