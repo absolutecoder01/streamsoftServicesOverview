@@ -86,4 +86,4 @@ streamsoftServicesOverview/
 └── tsconfig.json # TypeScript configuration
 ```
 
-Polish version available [here](pl.MD)
+Polish version available [here](pl.md)
