@@ -5,6 +5,11 @@
         "destination": "/dashboard",
         "permanent": true
       }
+    ],
+    "rewrites": [
+      {
+        "source": "/(.*)",
+        "destination": "/"
+      }
     ]
   }
-  
