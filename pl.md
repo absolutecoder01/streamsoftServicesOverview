@@ -81,4 +81,4 @@ streamsoftServicesOverview/
 ├── reszta plików          # reszta
 └── tsconfig.json          # Konfiguracja TypeScript
 ```
-Oryginalna wersja [tutaj](README.MD)
+Oryginalna wersja [tutaj](README.md)
