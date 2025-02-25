@@ -1,4 +1,10 @@
 {
+  "compilerOptions": {
+    "strict": true,
+    "noImplicitAny": true,
+    "jsx": "react-jsx", // or "react" depending on your React version
+    // other options...
+},
   "files": [],
   "references": [
     { "path": "./tsconfig.app.json" },

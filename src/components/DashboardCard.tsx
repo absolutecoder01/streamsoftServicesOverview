@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 interface Session {
     label: string;
@@ -8,7 +8,7 @@ interface Session {
 
 const DashboardCard = () => {
     const [cardOpen, setCardOpen] = useState<boolean>(false);
-    const [total, setTotal] = useState<number>(0);
+    const [total] = useState<number>(0);
     const [sessions, setSessions] = useState<Session[]>([]);
     const cardRef = useRef<HTMLDivElement | null>(null);
 
@@ -39,7 +39,7 @@ const DashboardCard = () => {
         setTimeout(() => {
             setCardOpen(true);
             countUp({ current: { innerText: total.toString() } }, 0, 11602, 800);
-            cardData.sessions.forEach((el, i) => {
+            cardData.sessions.forEach((el) => {
                 countUp({ current: { innerText: '0' } }, 0, el.size, 1600);
             });
         }, 100);

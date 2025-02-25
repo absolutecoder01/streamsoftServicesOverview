@@ -1,45 +1,39 @@
-// import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
-import React, { useEffect, useState } from 'react';
-import Sidebar from './components/Sidebar'
-import Navbar from './components/Navbar'
-import './index.css'
-
-// RGB Light above cursor
-// import SplashCursor from './components/SplashCursor'
-{/* <SplashCursor /> */}
+import Navbar from './components/Navbar'; // zakładając, że masz komponent Navbar
+import Sidebar from './components/Sidebar'; // zakładając, że masz komponent Sidebar
 
 function App() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [currentNav, setCurrentNav] = useState('Panel');
 
-  const handleNavChange = (name: React.SetStateAction<string>) => {
+  // Funkcja do zmiany nawigacji
+  const handleNavChange = (name: string) => {
     setCurrentNav(name); // Ustaw aktualną nawigację
-    localStorage.setItem('currentNav', name);
+    localStorage.setItem('currentNav', name); // Zapisz nawigację w localStorage
   };
+
   useEffect(() => {
     // Sprawdź, czy w localStorage jest zapisany aktualny element nawigacji
     const savedNav = localStorage.getItem('currentNav');
     if (savedNav) {
-        setCurrentNav(savedNav); // Ustaw aktualną nawigację na wartość z localStorage
+      setCurrentNav(savedNav); // Ustaw aktualną nawigację na wartość z localStorage
     }
-      const timer = setTimeout(() => {
-          setIsLoaded(true);
-      }, 1000); // Czas trwania animacji załadowania (1 sekunda)
+    const timer = setTimeout(() => {
+      setIsLoaded(true);
+    }, 1000); // Czas trwania animacji załadowania (1 sekunda)
 
-      return () => clearTimeout(timer);
+    return () => clearTimeout(timer);
   }, []);
-  return (
-    <>
-    <div className={` ${isLoaded ? 'slide-in' : 'opacity-0'}`}>
-    <Router>
-      <Navbar currentNav={currentNav} onNavChange={handleNavChange} />
-      <Sidebar />
-    </Router>
 
+  return (
+    <div className={`${isLoaded ? 'slide-in' : 'opacity-0'}`}>
+      <Router>
+        <Navbar currentNav={currentNav} onNavChange={handleNavChange} />
+        <Sidebar />
+      </Router>
     </div>
-    </>
-  )
+  );
 }
 
-export default App
+export default App;

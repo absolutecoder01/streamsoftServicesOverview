@@ -57,7 +57,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentNav, onNavChange }) => {
 
   return (
     <Disclosure as="nav" className="bg-white">
-      {({ open }) => (
+      {({ }) => (
         <>
           <div className="max-w-9xl w-full px-2 sm:px-6 lg:px-8 h-24">
             <div className="relative flex h-16 items-center justify-between">
